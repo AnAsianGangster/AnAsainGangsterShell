@@ -15,7 +15,7 @@ int shellFind(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellFind if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/find", args) == -1){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/find", args) == -1){
     printf("error with find.");
   }
   return 1;
@@ -35,7 +35,7 @@ int shellDisplayFile(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellDisplayFile if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/display", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/display", args) < 0){
     printf("error with display.");
   }
 
@@ -57,7 +57,7 @@ int shellListDirAll(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellListDirAll if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/listdirall", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/listdirall", args) < 0){
     printf("error with listdirall.");
   }
 
@@ -78,7 +78,7 @@ int shellListDir(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellListDir
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/listdir", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/listdir", args) < 0){
     printf("error with listdir.");
   }
   return 1;
@@ -99,7 +99,7 @@ int shellCountLine(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellCountLine if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/countline", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/countline", args) < 0){
     printf("error with countline.");
   }
   return 1;
@@ -119,7 +119,7 @@ int shellSummond(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellDaemonize if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/summond", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/summond", args) < 0){
     printf("error with summond.");
   }
 
@@ -142,7 +142,7 @@ int shellCheckDaemon(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellCheckDaemon if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Downloads/50005/ProgrammingAssignment1/ProgrammingAssignment1/PA1/shellPrograms/checkdaemon", args) < 0){
+  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/checkdaemon", args) < 0){
     printf("error with checkdaemon.");
   }
 

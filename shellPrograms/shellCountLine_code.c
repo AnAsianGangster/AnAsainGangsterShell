@@ -18,7 +18,7 @@ int shellCountLine_code(char **args)
     FILE *file;
     file = fopen(args[1], "r");
 
-    getline()
+    // getline()
 
     return 1;
 }
