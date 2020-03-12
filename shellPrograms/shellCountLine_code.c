@@ -17,6 +17,10 @@ int shellCountLine_code(char **args)
     // 8. Return 1, to exit program
     FILE *file;
     file = fopen(args[1], "r");
+    if(file == NULL){
+        printf("No such file named %s\n", args[1]);
+        return 1;
+    }
 
     char *buffer = NULL;
     size_t bufsize = 32;

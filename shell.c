@@ -425,13 +425,13 @@ void shellLoop(void)
   // printf("The fetched line is : %s\n", line);
 
   args = shellTokenizeInput(line);
-  printf("The first token is    -->%s<-- \n", args[0]);
-  printf("The second token is   -->%s<-- \n\n", args[1]);
-  int comp_result_usage = strcmp(args[0], builtin_commands[3]);
-  int comp_result_countline = strcmp(args[0], builtin_commands[5]);
-  int comp_result = comp_result_usage + comp_result_countline;
+  // printf("The first token is    -->%s<-- \n", args[0]);
+  // printf("The second token is   -->%s<-- \n\n", args[1]);
+  int comp_result = strcmp(args[0], builtin_commands[3]);
+  // int comp_result_countline = strcmp(args[0], builtin_commands[5]);
+  // int comp_result = comp_result_usage + comp_result_countline;
   if(comp_result == 0 && args[1] == NULL){
-    printf("usage/countline error\n");
+    printf("usage input error\n");
     shellLoop();
     free(line);
     free(args);
