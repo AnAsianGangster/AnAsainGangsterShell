@@ -18,7 +18,18 @@ int shellCountLine_code(char **args)
     FILE *file;
     file = fopen(args[1], "r");
 
-    // getline()
+    char *buffer = NULL;
+    size_t bufsize = 32;
+    buffer = (char *)malloc(bufsize * sizeof(char));
+
+    int count = 0;
+    while(getline(&buffer, &bufsize, file) != -1){
+        count++;
+    };
+    printf("There are %d lines in %s\n", count, args[1]);
+    // char *result = buffer;
+    // free(buffer);
+    // return buffer;
 
     return 1;
 }
