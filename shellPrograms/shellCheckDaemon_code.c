@@ -10,6 +10,12 @@ int shellCheckDaemon_code()
    sprintf(command, "ps -efj | grep summond  | grep -v tty > output.txt");
 
    // TODO: Execute the command using system(command) and check its return value
+   int system_return = system(command);
+   if(system_return == -1){
+      return 1;
+   } else {
+
+   }
 
    free(command);
 
@@ -20,6 +26,21 @@ int shellCheckDaemon_code()
    // 3. Increase the daemon count whenever we encounter a line
    // 4. Close the file
    // 5. print your result
+   FILE *file = fopen("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/output.txt", "r");
+   char *buffer = NULL;
+   size_t bufsize = 256;
+   buffer = (char *)malloc(bufsize * sizeof(char));
+
+   while(getline(&buffer, &bufsize, file) != -1){
+      live_daemons++;
+   }
+   live_daemons--;
+
+   if(live_daemons == -1){
+      live_daemons = 0;
+   } else {
+      live_daemons--;
+   }
 
    if (live_daemons == 0)
       printf("No daemon is alive right now\n");
@@ -30,6 +51,10 @@ int shellCheckDaemon_code()
 
 
    // TODO: close any file pointers and free any statically allocated memory 
+   int x;
+   for (x = sysconf(_SC_OPEN_MAX); x>=0; x--){
+   close(x);
+   }
 
    return 1;
 }
