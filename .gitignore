@@ -1,12 +1,12 @@
-another_text.txt
-combined.txt
+# another_text.txt
+# combined.txt
 customshell
-file_1.txt
-file_2.txt
-fillertext.txt
-intermediate.txt
+# file_1.txt
+# file_2.txt
+# fillertext.txt
+# intermediate.txt
 logfile_test.txt
-lorem_ipsum.txt
+# lorem_ipsum.txt
 /shellPrograms/checkdaemon
 /shellPrograms/countline
 /shellPrograms/display
