@@ -26,20 +26,13 @@ int shellCheckDaemon_code()
    // 3. Increase the daemon count whenever we encounter a line
    // 4. Close the file
    // 5. print your result
-   FILE *file = fopen("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/output.txt", "r");
+   FILE *file = fopen("output.txt", "r");
    char *buffer = NULL;
    size_t bufsize = 256;
    buffer = (char *)malloc(bufsize * sizeof(char));
 
    while(getline(&buffer, &bufsize, file) != -1){
       live_daemons++;
-   }
-   live_daemons--;
-
-   if(live_daemons == -1){
-      live_daemons = 0;
-   } else {
-      live_daemons--;
    }
 
    if (live_daemons == 0)
