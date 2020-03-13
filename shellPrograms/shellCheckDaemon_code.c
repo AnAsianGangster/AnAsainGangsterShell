@@ -40,6 +40,24 @@ int shellCheckDaemon_code()
    else
    {
       printf("There are in total of %d live daemons \n", live_daemons);
+
+      // print present daemon
+      FILE *fp;
+      char buf[1000];
+
+      fp =fopen("output.txt","r");
+
+      if (!fp){
+         printf("CSEShell: File doesn't exist.\n");
+         return 1;
+      }
+
+      while (fgets(buf,1000, fp)!=NULL)
+         printf("%s",buf);
+
+      printf("\n");
+
+      fclose(fp);
    }
 
 
