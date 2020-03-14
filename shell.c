@@ -1,7 +1,7 @@
 #include "shell.h"
 
 // the PATH
-// change to your PATH, your current working directory
+// TODO: change to your PATH, your current working directory
 #define PATH "/Users/anasiangangster/Desktop/AnAsianGangsterShell"
 
 // PATH for different function calls

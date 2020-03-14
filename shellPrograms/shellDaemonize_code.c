@@ -12,9 +12,15 @@
 
 #include "shellPrograms.h"
 
+// the PATH
+// TODO: change to your PATH, your current working directory
+#define PATH "/Users/anasiangangster/Desktop/AnAsianGangsterShell"
+
+// PATH for output.txt
+#define OUTPUT "/shellPrograms/output.txt"
+
 //TODO: change to appropriate path
-// char *path = "/Users/anasiangangster/Desktop/AnAsianGangsterShell/logfile_test.txt";
-char *path = "/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/output.txt";
+char *path = PATH OUTPUT;
 
 /*This function summons a daemon process out of the current process*/
 static int create_daemon()
