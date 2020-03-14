@@ -439,15 +439,36 @@ void shellLoop(void)
   // 7. free memory location containing the strings of characters
   // 8. free memory location containing char* to the first letter of each word in the input string
   // 9. check return value of shellExecuteInput. If 1, continue the loop (point 1) again and prompt for another input. Else, exit shell. 
-  printf("AnAsianGangsterShell> ");
+
+
+  // printf("    ______    _______  _______            _______  __    __   _______  __       __     \n"); 
+  // printf("  /      |   /       ||   ____|          /       ||  |  |  | |   ____||  |     |  |     \n");
+  // printf(" |  ,----'  |   (----`|  |__            |   (----`|  |__|  | |  |__   |  |     |  |     \n");
+  // printf(" |  |        \\   \\    |   __|            \\   \\    |   __   | |   __|  |  |     |  |     \n");
+  // printf(" |  `----.----)   |   |  |____       .----)   |   |  |  |  | |  |____ |  `----.|  `----.\n");
+  // printf("  \\______|_______/    |_______|      |_______/    |__|  |__| |_______||_______||_______|\n");                                                                
+  // printf("$ ");
+                                                                                            
+                                                                                            
+
+  printf("           /$$$$$$  /$$   /$$  /$$$$$$               /$$$$$$  /$$   /$$ /$$$$$$$$ /$$       /$$      \n");
+  printf("          /$$__  $$| $$  /$$/ /$$__  $$             /$$__  $$| $$  | $$| $$_____/| $$      | $$      \n");
+  printf("         | $$  \\ $$| $$ /$$/ | $$  \\ $$            | $$  \\__/| $$  | $$| $$      | $$      | $$      \n");
+  printf("         | $$  | $$| $$$$$/  | $$$$$$$$            |  $$$$$$ | $$$$$$$$| $$$$$   | $$      | $$      \n");
+  printf("         | $$  | $$| $$  $$  | $$__  $$             \\____  $$| $$__  $$| $$__/   | $$      | $$      \n");
+  printf("         | $$  | $$| $$\\  $$ | $$  | $$             /$$  \\ $$| $$  | $$| $$      | $$      | $$      \n");
+  printf("         |  $$$$$$/| $$ \\  $$| $$  | $$            |  $$$$$$/| $$  | $$| $$$$$$$$| $$$$$$$$| $$$$$$$$\n");
+  printf("          \\______/ |__/  \\__/|__/  |__/             \\______/ |__/  |__/|________/|________/|________/\n");
+  printf("secret code: 01000110 01010101 01000011 01001011 01000101 01010010  01010011 01001000 01000101 01001100 01001100\n");
+  printf("$ ");
 
   fflush(stdin);
 
   line = shellReadLine();
 
   args = shellTokenizeInput(line);
-  // printf("The first token is    -->%s<-- \n", args[0]);
-  // printf("The second token is   -->%s<-- \n\n", args[1]);
+  // printf("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓\nThe first token is    -->%s<-- \n", args[0]);
+  // printf("The second token is   -->%s<-- \n↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑\n", args[1]);
 
   // handle empty command
   if(args[0] == NULL){
