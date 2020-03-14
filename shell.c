@@ -2,6 +2,8 @@
 
 // the PATH
 // TODO: change to your PATH, your current working directory
+// Since we cannot change the shell.h is one of the requirement
+// There is another PATH we need to change at "/shellPrograms/shellDaemonize_code.c"
 #define PATH "/Users/anasiangangster/Desktop/AnAsianGangsterShell"
 
 // PATH for different function calls
