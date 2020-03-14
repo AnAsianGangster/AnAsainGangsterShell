@@ -1,5 +1,17 @@
 #include "shell.h"
 
+// the PATH
+// change to your PATH, your current working directory
+#define PATH "/Users/anasiangangster/Desktop/AnAsianGangsterShell"
+
+// PATH for different function calls
+#define FIND "/shellPrograms/find"
+#define DISPLAY "/shellPrograms/display"
+#define LISTDIRALL "/shellPrograms/listdirall"
+#define LISTDIR "/shellPrograms/listdir"
+#define COUNTLINE "/shellPrograms/countline"
+#define SUMMOND "/shellPrograms/summond"
+#define CHECKDAEMON "/shellPrograms/checkdaemon"
 /*
  List all files matching the name in args[1] under current directory and subdirectories
 */
@@ -15,7 +27,9 @@ int shellFind(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellFind if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/find", args) == -1){
+  const char *full_path = PATH FIND;
+  // printf("-->%s<--", full_path);
+  if(execvp(full_path, args) == -1){
     printf("error with find.");
   }
   return 1;
@@ -35,7 +49,8 @@ int shellDisplayFile(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellDisplayFile if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/display", args) < 0){
+  const char *full_path = PATH DISPLAY;
+  if(execvp(full_path, args) < 0){
     printf("error with display.");
   }
 
@@ -57,7 +72,8 @@ int shellListDirAll(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellListDirAll if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/listdirall", args) < 0){
+  const char *full_path = PATH LISTDIRALL;
+  if(execvp(full_path, args) < 0){
     printf("error with listdirall.");
   }
 
@@ -78,7 +94,8 @@ int shellListDir(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellListDir
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/listdir", args) < 0){
+  const char *full_path = PATH LISTDIR;
+  if(execvp(full_path, args) < 0){
     printf("error with listdir.");
   }
   return 1;
@@ -99,7 +116,8 @@ int shellCountLine(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellCountLine if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/countline", args) < 0){
+  const char *full_path = PATH COUNTLINE;
+  if(execvp(full_path, args) < 0){
     printf("error with countline.");
   }
   return 1;
@@ -119,7 +137,8 @@ int shellSummond(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellDaemonize if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/summond", args) < 0){
+  const char *full_path = PATH SUMMOND;
+  if(execvp(full_path, args) < 0){
     printf("error with summond.");
   }
 
@@ -142,7 +161,8 @@ int shellCheckDaemon(char **args)
   // 3. A successful execvp never returns, while a failed execvp returns -1
   // 4. Print some kind of error message if it returns -1
   // 5. return 1 to the caller of shellCheckDaemon if execvp fails to allow loop to continue
-  if(execvp("/Users/anasiangangster/Desktop/AnAsianGangsterShell/shellPrograms/checkdaemon", args) < 0){
+  const char *full_path = PATH CHECKDAEMON;
+  if(execvp(full_path, args) < 0){
     printf("error with checkdaemon.");
   }
 
