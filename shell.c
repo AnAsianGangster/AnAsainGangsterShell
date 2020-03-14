@@ -367,12 +367,13 @@ char *shellReadLine(void)
   // 4. Return the char*
 
   char *buffer = NULL;
-  size_t bufsize = 32;
+  size_t bufsize = 256;
   buffer = (char *)malloc(bufsize * sizeof(char));
 
-  getline(&buffer, &bufsize, stdin);
+  if(buffer != NULL){
+    getline(&buffer, &bufsize, stdin);
+  }
 
-  // char *result = buffer;
   // free(buffer);
   return buffer;
 }
@@ -383,7 +384,6 @@ char *shellReadLine(void)
 
 char **shellTokenizeInput(char *line)
 {
-
   int len = strlen(line);
   if(line[len-1] == '\n'){
     line[len-1] = 0;
@@ -393,8 +393,8 @@ char **shellTokenizeInput(char *line)
   // 2. Check that char ** that is returend by malloc is not NULL
   // 3. Tokenize the *line using strtok() function
   // 4. Return the char **
-  char **token_positions = malloc(sizeof(char *) * 8);
-  char *token = strtok(line, " \n\t");
+  char **token_positions = malloc(sizeof(char *) * 256);
+  char *token = strtok(line, SHELL_INPUT_DELIM);
 
   int index = 0;
  
@@ -444,48 +444,37 @@ void shellLoop(void)
   fflush(stdin);
 
   line = shellReadLine();
-  // printf("The fetched line is : %s\n", line);
 
   args = shellTokenizeInput(line);
   // printf("The first token is    -->%s<-- \n", args[0]);
   // printf("The second token is   -->%s<-- \n\n", args[1]);
+
+  // handle empty command
+  if(args[0] == NULL){
+    free(line);
+    free(args);
+    shellLoop();
+  }
+
   int comp_result = strcmp(args[0], builtin_commands[3]);
   // int comp_result_countline = strcmp(args[0], builtin_commands[5]);
   // int comp_result = comp_result_usage + comp_result_countline;
   if(comp_result == 0 && args[1] == NULL){
     printf("usage input error\n");
-    shellLoop();
     free(line);
     free(args);
+    shellLoop();
   } else {
     if(shellExecuteInput(args) != 0){
-      shellLoop();
       free(line);
       free(args);
+      shellLoop();
     } else {
       exit(1);
     }
   }
 }
 
-// int main(int argc, char **argv)
-// {
- 
-//  printf("Shell Run successful. Running now: \n");
- 
-//  char* line = shellReadLine();
-//  printf("The fetched line is : %s \n", line);
- 
-//  char** args = shellTokenizeInput(line);
-// //  printf("The first token is    -->%s<-- \n", args[0]);
-// //  printf("The second token is   -->%s<-- \n", args[1]);
-//  printf("The first token is %s \n", args[0]);
-//  printf("The second token is %s \n", args[1]);
- 
-//  shellExecuteInput(args);
- 
-//  return 0;
-// }
 
 int main(int argc, char **argv)
 {
